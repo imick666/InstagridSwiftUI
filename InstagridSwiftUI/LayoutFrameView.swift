@@ -12,6 +12,8 @@ struct LayoutFrameView: View {
     var topImagesNumber: Int
     var bottomImagesNumber: Int
     
+    // MARK: - Body
+    
     var body: some View {
         VStack(spacing: 10) {
             HStack(spacing: 10) {

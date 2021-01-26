@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct LayoutSelectorView: View {
+    
+    // MARK: - Binding Properties
+    
     @Binding var selectedLayout: Int
+    
+    // MARK: - Body
     
     var body: some View {
         HStack {

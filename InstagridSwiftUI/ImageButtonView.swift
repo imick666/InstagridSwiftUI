@@ -8,21 +8,38 @@
 import SwiftUI
 
 struct ImageButtonView: View {
-    @State var image: Image?
+    
+    // MARK: - State Properties
+    
+    @State var image: UIImage?
+    @State var pickerIsShow = false
+    
+    // MARK: - Body
     
     var body: some View {
-        Button(action: {
+        GeometryReader { geo in
+            let size = geo.size
             
-        }, label: {
-            ZStack {
-                Color(.white)
-                if image != nil {
-                    image
-                } else {
-                    Image("Plus")
+            Button(action: {
+                self.pickerIsShow.toggle()
+            }, label: {
+                ZStack {
+                    Color(.white)
+                    if image != nil {
+                        Image(uiImage: image!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    } else {
+                        Image("Plus")
+                    }
                 }
-            }
-        })
+                .frame(width: size.width, height: size.height, alignment: .center)
+                .clipped()
+            })
+            .sheet(isPresented: $pickerIsShow, content: {
+                ImagePickerController(image: $image)
+            })
+        }
     }
 }
 

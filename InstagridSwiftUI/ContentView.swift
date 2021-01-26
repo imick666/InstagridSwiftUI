@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    // MARK: - State Properties
+    
     @State var selectedLayout = 1
+    
+    // MARK: - Body
 
     var body: some View {
         VStack {
