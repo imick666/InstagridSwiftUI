@@ -17,6 +17,7 @@
 		E0189A8225C0274600537E59 /* ImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0189A8125C0274600537E59 /* ImageButtonView.swift */; };
 		E0189A8625C028E300537E59 /* LayoutSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0189A8525C028E300537E59 /* LayoutSelectorView.swift */; };
 		E0189A8A25C0325100537E59 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0189A8925C0325100537E59 /* ImagePickerController.swift */; };
+		E01E273625C06E2100E908C0 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E273525C06E2100E908C0 /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E0189A8125C0274600537E59 /* ImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButtonView.swift; sourceTree = "<group>"; };
 		E0189A8525C028E300537E59 /* LayoutSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSelectorView.swift; sourceTree = "<group>"; };
 		E0189A8925C0325100537E59 /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
+		E01E273525C06E2100E908C0 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				E0189A8125C0274600537E59 /* ImageButtonView.swift */,
 				E0189A8525C028E300537E59 /* LayoutSelectorView.swift */,
 				E0189A8925C0325100537E59 /* ImagePickerController.swift */,
+				E01E273525C06E2100E908C0 /* ActivityViewController.swift */,
 				E0189A6C25C0229000537E59 /* Assets.xcassets */,
 				E0189A7125C0229000537E59 /* Info.plist */,
 				E0189A7825C0233900537E59 /* Delm-Medium.otf */,
@@ -162,6 +165,7 @@
 				E0189A8A25C0325100537E59 /* ImagePickerController.swift in Sources */,
 				E0189A7E25C0267B00537E59 /* LayoutFrameView.swift in Sources */,
 				E0189A8625C028E300537E59 /* LayoutSelectorView.swift in Sources */,
+				E01E273625C06E2100E908C0 /* ActivityViewController.swift in Sources */,
 				E0189A8225C0274600537E59 /* ImageButtonView.swift in Sources */,
 				E0189A6925C0228F00537E59 /* InstagridSwiftUIApp.swift in Sources */,
 			);
