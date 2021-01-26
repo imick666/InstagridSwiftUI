@@ -51,5 +51,7 @@
 		<string>Delm-Medium.otf</string>
 		<string>ThirstySoftRegular.otf</string>
 	</array>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need to access your PhotoLibrary</string>
 </dict>
 </plist>

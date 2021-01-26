@@ -18,6 +18,8 @@
 		E0189A8625C028E300537E59 /* LayoutSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0189A8525C028E300537E59 /* LayoutSelectorView.swift */; };
 		E0189A8A25C0325100537E59 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0189A8925C0325100537E59 /* ImagePickerController.swift */; };
 		E01E273625C06E2100E908C0 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E273525C06E2100E908C0 /* ActivityViewController.swift */; };
+		E01E273A25C071BE00E908C0 /* View + UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E273925C071BE00E908C0 /* View + UIImage.swift */; };
+		E0DB8CD125C07236004C88AA /* UIView + Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB8CD025C07236004C88AA /* UIView + Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		E0189A8525C028E300537E59 /* LayoutSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSelectorView.swift; sourceTree = "<group>"; };
 		E0189A8925C0325100537E59 /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		E01E273525C06E2100E908C0 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		E01E273925C071BE00E908C0 /* View + UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + UIImage.swift"; sourceTree = "<group>"; };
+		E0DB8CD025C07236004C88AA /* UIView + Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Image.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		E0189A6725C0228F00537E59 /* InstagridSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				E01E273C25C071C200E908C0 /* Extension */,
 				E0189A6825C0228F00537E59 /* InstagridSwiftUIApp.swift */,
 				E0189A6A25C0228F00537E59 /* ContentView.swift */,
 				E0189A7D25C0267B00537E59 /* LayoutFrameView.swift */,
@@ -88,6 +93,15 @@
 				E0189A6F25C0229000537E59 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E01E273C25C071C200E908C0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E01E273925C071BE00E908C0 /* View + UIImage.swift */,
+				E0DB8CD025C07236004C88AA /* UIView + Image.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,7 +180,9 @@
 				E0189A7E25C0267B00537E59 /* LayoutFrameView.swift in Sources */,
 				E0189A8625C028E300537E59 /* LayoutSelectorView.swift in Sources */,
 				E01E273625C06E2100E908C0 /* ActivityViewController.swift in Sources */,
+				E0DB8CD125C07236004C88AA /* UIView + Image.swift in Sources */,
 				E0189A8225C0274600537E59 /* ImageButtonView.swift in Sources */,
+				E01E273A25C071BE00E908C0 /* View + UIImage.swift in Sources */,
 				E0189A6925C0228F00537E59 /* InstagridSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

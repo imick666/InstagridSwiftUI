@@ -9,6 +9,10 @@ import SwiftUI
 
 struct LayoutFrameView: View {
     
+    // MARK: - Binding Properties
+    
+    @Binding var frameRect: CGRect
+    
     // MARK: - Properties
     var selectedLayout: Int
     var topImagesNumber: Int {
@@ -29,26 +33,31 @@ struct LayoutFrameView: View {
     // MARK: - Body
     
     var body: some View {
-        VStack(spacing: 10) {
-            HStack(spacing: 10) {
-                ForEach(0..<topImagesNumber, id: \.self) { _ in
-                    ImageButtonView()
+        GeometryReader { geo in
+            VStack(spacing: 10) {
+                HStack(spacing: 10) {
+                    ForEach(0..<topImagesNumber, id: \.self) { _ in
+                        ImageButtonView()
+                    }
+                }
+                HStack(spacing: 10) {
+                    ForEach(0..<bottomImagesNumber, id: \.self) { _ in
+                        ImageButtonView()
+                    }
                 }
             }
-            HStack(spacing: 10) {
-                ForEach(0..<bottomImagesNumber, id: \.self) { _ in
-                    ImageButtonView()
-                }
-            }
+            .padding(10)
+            .onAppear(perform: {
+                frameRect = geo.frame(in: .global)
+            })
         }
-        .aspectRatio(1, contentMode: .fit)
-        .padding(10)
         .background(Color(#colorLiteral(red: 0, green: 0.4034833014, blue: 0.6134039164, alpha: 1)))
+        .aspectRatio(1, contentMode: .fit)
     }
 }
 
 struct LayoutFrameView_Previews: PreviewProvider {
     static var previews: some View {
-        LayoutFrameView(selectedLayout: 1).previewLayout(.sizeThatFits)
+        LayoutFrameView(frameRect: .constant(.zero), selectedLayout: 1).previewLayout(.sizeThatFits)
     }
 }

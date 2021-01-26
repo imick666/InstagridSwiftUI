@@ -13,13 +13,19 @@ struct ContentView: View {
     
     @State var selectedLayout = 1
     @State var activityControlerIsShow = false
+    @State var frameRect: CGRect = .zero
+    @State var frameImage: UIImage?
+    
     
     // MARK: - Properties
     
     var swipeUp: some Gesture {
         DragGesture()
             .onEnded { value in
-                activityControlerIsShow.toggle()
+                frameImage = asImage(rect: frameRect)
+                if value.location.y < value.startLocation.y {
+                    activityControlerIsShow.toggle()
+                }
             }
     }
     
@@ -40,7 +46,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
             }
             
-            LayoutFrameView(selectedLayout: selectedLayout)
+            LayoutFrameView(frameRect: $frameRect, selectedLayout: selectedLayout)
                 .gesture(swipeUp)
                 .padding(20)
             
@@ -51,7 +57,7 @@ struct ContentView: View {
         }
         .background(Color(#colorLiteral(red: 0.6802163124, green: 0.835055232, blue: 0.8933518529, alpha: 1)).edgesIgnoringSafeArea(.all))
         .sheet(isPresented: $activityControlerIsShow, content: {
-            ActivityViewController(activityItems: [], applicationActivities: nil)
+            ActivityViewController(activityItems: [frameImage], applicationActivities: nil)
         })
     }
     
