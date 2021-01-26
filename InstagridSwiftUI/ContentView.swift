@@ -12,6 +12,16 @@ struct ContentView: View {
     // MARK: - State Properties
     
     @State var selectedLayout = 1
+    @State var activityControlerIsShow = false
+    
+    // MARK: - Properties
+    
+    var swipeUp: some Gesture {
+        DragGesture()
+            .onEnded { value in
+                activityControlerIsShow.toggle()
+            }
+    }
     
     // MARK: - Properties
     
@@ -42,6 +52,7 @@ struct ContentView: View {
             }
             
             layoutFrame
+                .gesture(swipeUp)
                 .padding(20)
             
             Spacer()
@@ -50,6 +61,9 @@ struct ContentView: View {
             
         }
         .background(Color(#colorLiteral(red: 0.6802163124, green: 0.835055232, blue: 0.8933518529, alpha: 1)).edgesIgnoringSafeArea(.all))
+        .sheet(isPresented: $activityControlerIsShow, content: {
+            Text("Bonjour")
+        })
     }
     
     // MARK: - Methodes
