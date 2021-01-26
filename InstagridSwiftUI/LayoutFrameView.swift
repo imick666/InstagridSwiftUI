@@ -10,8 +10,21 @@ import SwiftUI
 struct LayoutFrameView: View {
     
     // MARK: - Properties
-    var topImagesNumber: Int
-    var bottomImagesNumber: Int
+    var selectedLayout: Int
+    var topImagesNumber: Int {
+        switch selectedLayout {
+        case 2, 3: return 2
+        case 1: return 1
+        default: return 0
+        }
+    }
+    var bottomImagesNumber: Int {
+        switch selectedLayout {
+        case 1, 3: return 2
+        case 2: return 1
+        default: return 0
+        }
+    }
     
     // MARK: - Body
     
@@ -36,6 +49,6 @@ struct LayoutFrameView: View {
 
 struct LayoutFrameView_Previews: PreviewProvider {
     static var previews: some View {
-        LayoutFrameView(topImagesNumber: 1, bottomImagesNumber: 2).previewLayout(.sizeThatFits)
+        LayoutFrameView(selectedLayout: 1).previewLayout(.sizeThatFits)
     }
 }

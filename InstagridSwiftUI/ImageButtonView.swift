@@ -35,7 +35,7 @@ struct ImageButtonView: View {
             }
             .frame(width: size.width, height: size.height, alignment: .center)
             .clipped()
-            .sheet(isPresented: $pickerIsShow, content: {
+            .popover(isPresented: $pickerIsShow, content: {
                 ImagePickerController(image: $image)
             })
         }

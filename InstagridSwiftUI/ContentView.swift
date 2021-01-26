@@ -23,17 +23,6 @@ struct ContentView: View {
             }
     }
     
-    // MARK: - Properties
-    
-    var layoutFrame: LayoutFrameView {
-        switch selectedLayout {
-        case 1: return LayoutFrameView(topImagesNumber: 1, bottomImagesNumber: 2)
-        case 2: return LayoutFrameView(topImagesNumber: 2, bottomImagesNumber: 1)
-        case 3: return LayoutFrameView(topImagesNumber: 2, bottomImagesNumber: 2)
-        default: return LayoutFrameView(topImagesNumber: 0, bottomImagesNumber: 0)
-        }
-    }
-    
     // MARK: - Body
 
     var body: some View {
@@ -51,7 +40,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
             }
             
-            layoutFrame
+            LayoutFrameView(selectedLayout: selectedLayout)
                 .gesture(swipeUp)
                 .padding(20)
             
@@ -62,7 +51,7 @@ struct ContentView: View {
         }
         .background(Color(#colorLiteral(red: 0.6802163124, green: 0.835055232, blue: 0.8933518529, alpha: 1)).edgesIgnoringSafeArea(.all))
         .sheet(isPresented: $activityControlerIsShow, content: {
-            Text("Bonjour")
+            ActivityViewController(activityItems: [], applicationActivities: nil)
         })
     }
     
