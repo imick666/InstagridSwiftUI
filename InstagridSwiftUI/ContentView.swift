@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedLayout = 1
+    
     var body: some View {
         VStack {
             Text("Instagrid")
@@ -24,6 +26,8 @@ struct ContentView: View {
             }
             LayoutFrameView(topImagesNumber: 1, bottomImagesNumber: 2)
             Spacer()
+            
+            LayoutSelectorView(selectedLayout: $selectedLayout)
             
         }
         .background(Color(#colorLiteral(red: 0.6802163124, green: 0.835055232, blue: 0.8933518529, alpha: 1)).edgesIgnoringSafeArea(.all))
