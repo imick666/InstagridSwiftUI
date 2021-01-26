@@ -11,6 +11,8 @@
 		E0189A6B25C0228F00537E59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0189A6A25C0228F00537E59 /* ContentView.swift */; };
 		E0189A6D25C0229000537E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0189A6C25C0229000537E59 /* Assets.xcassets */; };
 		E0189A7025C0229000537E59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0189A6F25C0229000537E59 /* Preview Assets.xcassets */; };
+		E0189A7A25C0233A00537E59 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0189A7825C0233900537E59 /* Delm-Medium.otf */; };
+		E0189A7B25C0233A00537E59 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0189A7925C0233A00537E59 /* ThirstySoftRegular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		E0189A6C25C0229000537E59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0189A6F25C0229000537E59 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E0189A7125C0229000537E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0189A7825C0233900537E59 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
+		E0189A7925C0233A00537E59 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 				E0189A6A25C0228F00537E59 /* ContentView.swift */,
 				E0189A6C25C0229000537E59 /* Assets.xcassets */,
 				E0189A7125C0229000537E59 /* Info.plist */,
+				E0189A7825C0233900537E59 /* Delm-Medium.otf */,
+				E0189A7925C0233A00537E59 /* ThirstySoftRegular.otf */,
 				E0189A6E25C0229000537E59 /* Preview Content */,
 			);
 			path = InstagridSwiftUI;
@@ -128,6 +134,8 @@
 			files = (
 				E0189A7025C0229000537E59 /* Preview Assets.xcassets in Resources */,
 				E0189A6D25C0229000537E59 /* Assets.xcassets in Resources */,
+				E0189A7B25C0233A00537E59 /* ThirstySoftRegular.otf in Resources */,
+				E0189A7A25C0233A00537E59 /* Delm-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
