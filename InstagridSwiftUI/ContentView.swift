@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedLayout = 1
-    
+
     var body: some View {
         VStack {
             Text("Instagrid")
@@ -24,7 +24,14 @@ struct ContentView: View {
                     .font(.custom("Delm-Medium", size: 24))
                     .foregroundColor(.white)
             }
-            LayoutFrameView(topImagesNumber: 1, bottomImagesNumber: 2)
+            
+            switch selectedLayout {
+            case 1: LayoutFrameView(topImagesNumber: 1, bottomImagesNumber: 2)
+            case 2: LayoutFrameView(topImagesNumber: 2, bottomImagesNumber: 1)
+            case 3: LayoutFrameView(topImagesNumber: 2, bottomImagesNumber: 2)
+            default: LayoutFrameView(topImagesNumber: 0, bottomImagesNumber: 0)
+            }
+            
             Spacer()
             
             LayoutSelectorView(selectedLayout: $selectedLayout)
@@ -32,6 +39,9 @@ struct ContentView: View {
         }
         .background(Color(#colorLiteral(red: 0.6802163124, green: 0.835055232, blue: 0.8933518529, alpha: 1)).edgesIgnoringSafeArea(.all))
     }
+    
+    // MARK: - Methodes
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
