@@ -16,7 +16,6 @@ struct ContentView: View {
     @State var frameRect: CGRect = .zero
     @State var frameImage: UIImage?
     
-    
     // MARK: - Properties
     
     var swipeUp: some Gesture {
@@ -57,7 +56,11 @@ struct ContentView: View {
         }
         .background(Color(#colorLiteral(red: 0.6802163124, green: 0.835055232, blue: 0.8933518529, alpha: 1)).edgesIgnoringSafeArea(.all))
         .sheet(isPresented: $activityControlerIsShow, content: {
-            ActivityViewController(activityItems: [frameImage], applicationActivities: nil)
+            if let image = frameImage {
+                ActivityViewController(activityItems: [image], applicationActivities: nil)
+            } else {
+                Text("No Image")
+            }
         })
     }
     

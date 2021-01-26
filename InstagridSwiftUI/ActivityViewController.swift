@@ -11,7 +11,7 @@ struct ActivityViewController: UIViewControllerRepresentable {
     var activityItems: [Any]
     var applicationActivities: [UIActivity]?
     
-    func makeUIViewController(context: Context) -> some UIViewController {
+    func makeUIViewController(context: Context) -> UIActivityViewController {
         let avc = UIActivityViewController(activityItems: activityItems, applicationActivities: applicationActivities)
         
         return avc
