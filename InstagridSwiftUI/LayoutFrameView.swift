@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LayoutFrameView: View {
+    
     // MARK: - Properties
     var topImagesNumber: Int
     var bottomImagesNumber: Int
@@ -17,17 +18,17 @@ struct LayoutFrameView: View {
     var body: some View {
         VStack(spacing: 10) {
             HStack(spacing: 10) {
-                ForEach(0..<topImagesNumber) { _ in
+                ForEach(0..<topImagesNumber, id: \.self) { _ in
                     ImageButtonView()
                 }
             }
             HStack(spacing: 10) {
-                ForEach(0..<bottomImagesNumber) { _ in
+                ForEach(0..<bottomImagesNumber, id: \.self) { _ in
                     ImageButtonView()
                 }
             }
         }
-        .frame(width: 220, height: 220, alignment: .center)
+        .aspectRatio(1, contentMode: .fit)
         .padding(10)
         .background(Color(#colorLiteral(red: 0, green: 0.4034833014, blue: 0.6134039164, alpha: 1)))
     }

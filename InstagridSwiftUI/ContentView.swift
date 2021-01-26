@@ -13,6 +13,17 @@ struct ContentView: View {
     
     @State var selectedLayout = 1
     
+    // MARK: - Properties
+    
+    var layoutFrame: LayoutFrameView {
+        switch selectedLayout {
+        case 1: return LayoutFrameView(topImagesNumber: 1, bottomImagesNumber: 2)
+        case 2: return LayoutFrameView(topImagesNumber: 2, bottomImagesNumber: 1)
+        case 3: return LayoutFrameView(topImagesNumber: 2, bottomImagesNumber: 2)
+        default: return LayoutFrameView(topImagesNumber: 0, bottomImagesNumber: 0)
+        }
+    }
+    
     // MARK: - Body
 
     var body: some View {
@@ -30,12 +41,8 @@ struct ContentView: View {
                     .foregroundColor(.white)
             }
             
-            switch selectedLayout {
-            case 1: LayoutFrameView(topImagesNumber: 1, bottomImagesNumber: 2)
-            case 2: LayoutFrameView(topImagesNumber: 2, bottomImagesNumber: 1)
-            case 3: LayoutFrameView(topImagesNumber: 2, bottomImagesNumber: 2)
-            default: LayoutFrameView(topImagesNumber: 0, bottomImagesNumber: 0)
-            }
+            layoutFrame
+                .padding(20)
             
             Spacer()
             

@@ -19,23 +19,22 @@ struct ImageButtonView: View {
     var body: some View {
         GeometryReader { geo in
             let size = geo.size
-            
-            Button(action: {
-                self.pickerIsShow.toggle()
-            }, label: {
-                ZStack {
-                    Color(.white)
-                    if image != nil {
-                        Image(uiImage: image!)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                    } else {
+            ZStack {
+                Color(.white)
+                if image != nil {
+                    Image(uiImage: image!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                } else {
+                    Button(action: {
+                        pickerIsShow.toggle()
+                    }, label: {
                         Image("Plus")
-                    }
+                    })
                 }
-                .frame(width: size.width, height: size.height, alignment: .center)
-                .clipped()
-            })
+            }
+            .frame(width: size.width, height: size.height, alignment: .center)
+            .clipped()
             .sheet(isPresented: $pickerIsShow, content: {
                 ImagePickerController(image: $image)
             })
