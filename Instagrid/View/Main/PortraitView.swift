@@ -29,7 +29,8 @@ struct PortraitView: View {
             }
             .foregroundColor(.white)
             
-            createGrid(up: 2, down: 2)
+            GridView(up: 2, down: 2)
+                .background(Color("DeepBlue"))
                 .padding(.horizontal)
             
             Spacer()
@@ -42,44 +43,21 @@ struct PortraitView: View {
         .background(Color("LightBlue").edgesIgnoringSafeArea(.all))
     }
     
-    private func createGrid(up: Int, down: Int,
-                            color: Color = Color("DeepBlue")) -> some View {
-        
-        GeometryReader { proxy in
-            let paddingSize = proxy.size.width * 0.04
-            
-            VStack(spacing: paddingSize) {
-                HStack(spacing: paddingSize) {
-                    ForEach(0 ..< up) { _ in
-                        Color(.white)
-                    }
-                }
-                HStack(spacing: paddingSize) {
-                    ForEach(0 ..< down) { _ in
-                        Color(.white)
-                    }
-                }
-            }
-            .padding(paddingSize)
-        }
-        .background(color)
-        .aspectRatio(1, contentMode: .fit)
-        
-    }
-    
     private var createSelector: some View {
-        let color = Color("Grey")
-        
-        return ScrollView(.horizontal, showsIndicators: false) {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack() {
-                createGrid(up: 2, down: 2, color: color)
+                GridView(up: 2, down: 2)
+                    .background(Color("Grey"))
                     .overlay(
                         Color("MidBlue")
                             .opacity(0.5)
                     )
-                createGrid(up: 1, down: 2, color: color)
-                createGrid(up: 2, down: 1, color: color)
-                createGrid(up: 1, down: 1, color: color)
+                GridView(up: 2, down: 1)
+                    .background(Color("Grey"))
+                GridView(up: 1, down: 2)
+                    .background(Color("Grey"))
+                GridView(up: 1, down: 1)
+                    .background(Color("Grey"))
             }
         }
     }

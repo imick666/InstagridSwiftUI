@@ -18,6 +18,7 @@
 		E02A9F9926F88E8E001CC9B6 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E02A9F9726F88E8E001CC9B6 /* Delm-Medium.otf */; };
 		E02A9F9A26F88E8E001CC9B6 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E02A9F9826F88E8E001CC9B6 /* ThirstySoftRegular.otf */; };
 		E02A9F9D26F890C9001CC9B6 /* PortraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F9C26F890C9001CC9B6 /* PortraitView.swift */; };
+		E02A9FA026F89B28001CC9B6 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F9F26F89B28001CC9B6 /* GridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E02A9F9726F88E8E001CC9B6 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		E02A9F9826F88E8E001CC9B6 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		E02A9F9C26F890C9001CC9B6 /* PortraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitView.swift; sourceTree = "<group>"; };
+		E02A9F9F26F89B28001CC9B6 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				E02A9F6826F88C61001CC9B6 /* ContentView.swift */,
 				E02A9F9B26F890B9001CC9B6 /* Main */,
+				E02A9F9E26F89B02001CC9B6 /* Grid */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +178,14 @@
 				E02A9F9C26F890C9001CC9B6 /* PortraitView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		E02A9F9E26F89B02001CC9B6 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				E02A9F9F26F89B28001CC9B6 /* GridView.swift */,
+			);
+			path = Grid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +323,7 @@
 				E02A9F6526F88C61001CC9B6 /* AppDelegate.swift in Sources */,
 				E02A9F9D26F890C9001CC9B6 /* PortraitView.swift in Sources */,
 				E02A9F6726F88C61001CC9B6 /* SceneDelegate.swift in Sources */,
+				E02A9FA026F89B28001CC9B6 /* GridView.swift in Sources */,
 				E02A9F6926F88C61001CC9B6 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
