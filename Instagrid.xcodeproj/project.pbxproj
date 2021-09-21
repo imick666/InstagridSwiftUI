@@ -19,6 +19,7 @@
 		E02A9F9A26F88E8E001CC9B6 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E02A9F9826F88E8E001CC9B6 /* ThirstySoftRegular.otf */; };
 		E02A9F9D26F890C9001CC9B6 /* PortraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F9C26F890C9001CC9B6 /* PortraitView.swift */; };
 		E02A9FA026F89B28001CC9B6 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F9F26F89B28001CC9B6 /* GridView.swift */; };
+		E02A9FA526F89EB3001CC9B6 /* GridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9FA426F89EB3001CC9B6 /* GridViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		E02A9F9826F88E8E001CC9B6 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		E02A9F9C26F890C9001CC9B6 /* PortraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitView.swift; sourceTree = "<group>"; };
 		E02A9F9F26F89B28001CC9B6 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		E02A9FA426F89EB3001CC9B6 /* GridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		E02A9F6326F88C61001CC9B6 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				E02A9FA326F89EA2001CC9B6 /* ViewModel */,
 				E02A9F9426F88C68001CC9B6 /* SupportingFiles */,
 				E02A9F9526F88C94001CC9B6 /* View */,
 				E02A9F6C26F88C62001CC9B6 /* Preview Content */,
@@ -186,6 +189,14 @@
 				E02A9F9F26F89B28001CC9B6 /* GridView.swift */,
 			);
 			path = Grid;
+			sourceTree = "<group>";
+		};
+		E02A9FA326F89EA2001CC9B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E02A9FA426F89EB3001CC9B6 /* GridViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E02A9FA526F89EB3001CC9B6 /* GridViewModel.swift in Sources */,
 				E02A9F6526F88C61001CC9B6 /* AppDelegate.swift in Sources */,
 				E02A9F9D26F890C9001CC9B6 /* PortraitView.swift in Sources */,
 				E02A9F6726F88C61001CC9B6 /* SceneDelegate.swift in Sources */,

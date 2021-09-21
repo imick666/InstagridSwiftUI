@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        switch verticalSizeClass {
+        case .regular: PortraitView()
+        case .compact: Text("Hello, World!")
+        default: Text("WHATS!!!!!")
+        }
     }
 }
 

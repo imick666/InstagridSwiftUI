@@ -9,9 +9,25 @@ import SwiftUI
 
 struct PortraitView: View {
     
+    // MARK: - Properties
+    
+    @State private var selectedIndex = 0
+    
+    private var layouts: [GridViewModel] = [
+        GridViewModel(top: 2, bottom: 2, orientation: .horizontal),
+        GridViewModel(top: 1, bottom: 2, orientation: .horizontal),
+        GridViewModel(top: 2, bottom: 1, orientation: .horizontal),
+        GridViewModel(top: 1, bottom: 1, orientation: .horizontal),
+        GridViewModel(top: 1, bottom: 2, orientation: .vertical),
+        GridViewModel(top: 2, bottom: 1, orientation: .vertical),
+        GridViewModel(top: 1, bottom: 1, orientation: .vertical)
+    ]
+    
     private var screenSize: CGRect {
         UIScreen.main.bounds
     }
+    
+    // MARK: - Body
     
     var body: some View {
         VStack {
@@ -29,35 +45,40 @@ struct PortraitView: View {
             }
             .foregroundColor(.white)
             
-            GridView(up: 2, down: 2)
+            GridView(viewModel: layouts[selectedIndex])
                 .background(Color("DeepBlue"))
-                .padding(.horizontal)
+                .padding()
             
             Spacer()
             
             createSelector
-                .frame(height: screenSize.height / 8)
+                .frame(height: screenSize.height / 10)
                 .padding()
             
         }
         .background(Color("LightBlue").edgesIgnoringSafeArea(.all))
     }
     
+    // MARK: - Views
+    
     private var createSelector: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack() {
-                GridView(up: 2, down: 2)
-                    .background(Color("Grey"))
-                    .overlay(
-                        Color("MidBlue")
-                            .opacity(0.5)
-                    )
-                GridView(up: 2, down: 1)
-                    .background(Color("Grey"))
-                GridView(up: 1, down: 2)
-                    .background(Color("Grey"))
-                GridView(up: 1, down: 1)
-                    .background(Color("Grey"))
+                ForEach(0 ..< layouts.count, id: \.self) { index in
+                    
+                    Button(action: { selectedIndex = index },
+                           label: {
+                            GridView(viewModel: layouts[index])
+                                .background(Color("Grey"))
+                                .overlay(
+                                    Color("MidBlue")
+                                        .opacity(
+                                            (index == selectedIndex) ? 0.4 : 0
+                                        )
+                                )
+                    })
+                    
+                }
             }
         }
     }
