@@ -20,6 +20,7 @@
 		E02A9F9D26F890C9001CC9B6 /* PortraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F9C26F890C9001CC9B6 /* PortraitView.swift */; };
 		E02A9FA026F89B28001CC9B6 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F9F26F89B28001CC9B6 /* GridView.swift */; };
 		E02A9FA526F89EB3001CC9B6 /* GridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9FA426F89EB3001CC9B6 /* GridViewModel.swift */; };
+		E05A4BD326FD0C6100B8F4F0 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A4BD226FD0C6100B8F4F0 /* SelectorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E02A9F9C26F890C9001CC9B6 /* PortraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitView.swift; sourceTree = "<group>"; };
 		E02A9F9F26F89B28001CC9B6 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		E02A9FA426F89EB3001CC9B6 /* GridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewModel.swift; sourceTree = "<group>"; };
+		E05A4BD226FD0C6100B8F4F0 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				E02A9F9F26F89B28001CC9B6 /* GridView.swift */,
+				E05A4BD226FD0C6100B8F4F0 /* SelectorView.swift */,
 			);
 			path = Grid;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				E02A9F6726F88C61001CC9B6 /* SceneDelegate.swift in Sources */,
 				E02A9FA026F89B28001CC9B6 /* GridView.swift in Sources */,
 				E02A9F6926F88C61001CC9B6 /* ContentView.swift in Sources */,
+				E05A4BD326FD0C6100B8F4F0 /* SelectorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

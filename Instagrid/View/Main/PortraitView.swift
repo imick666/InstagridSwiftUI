@@ -13,7 +13,7 @@ struct PortraitView: View {
     
     @State private var selectedIndex = 0
     
-    private var layouts: [GridViewModel] = [
+    private let layouts: [GridViewModel] = [
         GridViewModel(top: 2, bottom: 2, orientation: .horizontal),
         GridViewModel(top: 1, bottom: 2, orientation: .horizontal),
         GridViewModel(top: 2, bottom: 1, orientation: .horizontal),
@@ -51,36 +51,12 @@ struct PortraitView: View {
             
             Spacer()
             
-            createSelector
+            SelectorView(data: layouts, selectedIndex: $selectedIndex)
                 .frame(height: screenSize.height / 10)
                 .padding()
             
         }
         .background(Color("LightBlue").edgesIgnoringSafeArea(.all))
-    }
-    
-    // MARK: - Views
-    
-    private var createSelector: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack() {
-                ForEach(0 ..< layouts.count, id: \.self) { index in
-                    
-                    Button(action: { selectedIndex = index },
-                           label: {
-                            GridView(viewModel: layouts[index])
-                                .background(Color("Grey"))
-                                .overlay(
-                                    Color("MidBlue")
-                                        .opacity(
-                                            (index == selectedIndex) ? 0.4 : 0
-                                        )
-                                )
-                    })
-                    
-                }
-            }
-        }
     }
     
 }
