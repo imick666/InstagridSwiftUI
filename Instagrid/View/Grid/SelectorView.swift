@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectorView: View {
     
-    var data: [GridViewModel]
+    var data: [GridModel]
     @Binding var selectedIndex: Int
     
     var body: some View {
@@ -19,7 +19,7 @@ struct SelectorView: View {
                     
                     Button(action: { selectedIndex = index },
                            label: {
-                            GridView(viewModel: data[index])
+                            GridView(grid: data[index])
                                 .background(Color("Grey"))
                                 .overlay(
                                     Color("MidBlue")
@@ -37,15 +37,7 @@ struct SelectorView: View {
 
 struct Selector_Previews: PreviewProvider {
     static var previews: some View {
-        SelectorView(data: [
-            GridViewModel(top: 2, bottom: 2, orientation: .horizontal),
-            GridViewModel(top: 1, bottom: 2, orientation: .horizontal),
-            GridViewModel(top: 2, bottom: 1, orientation: .horizontal),
-            GridViewModel(top: 1, bottom: 1, orientation: .horizontal),
-            GridViewModel(top: 1, bottom: 2, orientation: .vertical),
-            GridViewModel(top: 2, bottom: 1, orientation: .vertical),
-            GridViewModel(top: 1, bottom: 1, orientation: .vertical)
-        ], selectedIndex: .constant(0))
+        SelectorView(data: GridModel.layouts, selectedIndex: .constant(0))
             .frame(height: 80)
     }
 }

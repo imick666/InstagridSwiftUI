@@ -13,15 +13,7 @@ struct PortraitView: View {
     
     @State private var selectedIndex = 0
     
-    private let layouts: [GridViewModel] = [
-        GridViewModel(top: 2, bottom: 2, orientation: .horizontal),
-        GridViewModel(top: 1, bottom: 2, orientation: .horizontal),
-        GridViewModel(top: 2, bottom: 1, orientation: .horizontal),
-        GridViewModel(top: 1, bottom: 1, orientation: .horizontal),
-        GridViewModel(top: 1, bottom: 2, orientation: .vertical),
-        GridViewModel(top: 2, bottom: 1, orientation: .vertical),
-        GridViewModel(top: 1, bottom: 1, orientation: .vertical)
-    ]
+    private let layouts: [GridModel] = GridModel.layouts
     
     private var screenSize: CGRect {
         UIScreen.main.bounds
@@ -45,7 +37,7 @@ struct PortraitView: View {
             }
             .foregroundColor(.white)
             
-            GridView(viewModel: layouts[selectedIndex])
+            GridView(grid: layouts[selectedIndex])
                 .background(Color("DeepBlue"))
                 .padding()
             

@@ -11,7 +11,7 @@ struct GridView: View {
     
     // MARK: - Properties
     
-    var viewModel: GridViewModel
+    var grid: GridModel
     
     // MARK: - Body
     
@@ -19,7 +19,7 @@ struct GridView: View {
         GeometryReader { geo in
             let padding = geo.size.width * 0.04
             
-            switch viewModel.orientation {
+            switch grid.orientation {
             case .horizontal: horizontalGrid(padding: padding)
             case .vertical: verticalGrid(padding: padding)
             }
@@ -32,13 +32,13 @@ struct GridView: View {
     private func horizontalGrid(padding: CGFloat) -> some View {
         VStack(spacing: padding) {
             HStack(spacing: padding) {
-                ForEach(0 ..< viewModel.top, id: \.self) { _ in
+                ForEach(0 ..< grid.top, id: \.self) { _ in
                     Color(.white)
                 }
             }
             
             HStack(spacing: padding) {
-                ForEach(0 ..< viewModel.bottom, id: \.self) { _ in
+                ForEach(0 ..< grid.bottom, id: \.self) { _ in
                     Color(.white)
                 }
             }
@@ -49,13 +49,13 @@ struct GridView: View {
     private func verticalGrid(padding: CGFloat) -> some View {
         HStack(spacing: padding) {
             VStack(spacing: padding) {
-                ForEach(0 ..< viewModel.top, id: \.self) { _ in
+                ForEach(0 ..< grid.top, id: \.self) { _ in
                     Color(.white)
                 }
             }
             
             VStack(spacing: padding) {
-                ForEach(0 ..< viewModel.bottom, id: \.self) { _ in
+                ForEach(0 ..< grid.bottom, id: \.self) { _ in
                     Color(.white)
                 }
             }
@@ -67,7 +67,7 @@ struct GridView: View {
 
 struct GridView_Previews: PreviewProvider {
     static var previews: some View {
-        GridView(viewModel: GridViewModel(top: 1, bottom: 2, orientation: .vertical))
+        GridView(grid: GridModel.layouts[0])
             .background(Color("DeepBlue"))
     }
 }
