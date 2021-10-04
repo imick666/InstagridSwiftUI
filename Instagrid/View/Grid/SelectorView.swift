@@ -14,12 +14,13 @@ struct SelectorView: View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack() {
+            HStack(alignment: .bottom) {
                 ForEach(0 ..< data.count, id: \.self) { index in
                     
                     Button(action: { selectedIndex = index },
                            label: {
-                            GridView(grid: data[index])
+                        
+                        GridView(grid: data[index]) { Color(.white) }
                                 .background(Color("Grey"))
                                 .overlay(
                                     Color("MidBlue")
@@ -28,7 +29,6 @@ struct SelectorView: View {
                                         )
                                 )
                     })
-                    
                 }
             }
         }

@@ -63,5 +63,9 @@
 		<string>Delm-Medium.otf</string>
 		<string>ThirstySoftRegular.otf</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Instagrid need to access your camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Instagrid need to access your photo library</string>
 </dict>
 </plist>

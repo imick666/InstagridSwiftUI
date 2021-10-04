@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct GridView: View {
+struct GridView<Content: View>: View {
     
     // MARK: - Properties
     
     var grid: GridModel
+    var content: () -> Content
     
     // MARK: - Body
     
@@ -33,13 +34,13 @@ struct GridView: View {
         VStack(spacing: padding) {
             HStack(spacing: padding) {
                 ForEach(0 ..< grid.top, id: \.self) { _ in
-                    Color(.white)
+                    content()
                 }
             }
             
             HStack(spacing: padding) {
                 ForEach(0 ..< grid.bottom, id: \.self) { _ in
-                    Color(.white)
+                    content()
                 }
             }
         }
@@ -50,13 +51,13 @@ struct GridView: View {
         HStack(spacing: padding) {
             VStack(spacing: padding) {
                 ForEach(0 ..< grid.top, id: \.self) { _ in
-                    Color(.white)
+                    content()
                 }
             }
             
             VStack(spacing: padding) {
                 ForEach(0 ..< grid.bottom, id: \.self) { _ in
-                    Color(.white)
+                    content()
                 }
             }
         }
@@ -67,7 +68,9 @@ struct GridView: View {
 
 struct GridView_Previews: PreviewProvider {
     static var previews: some View {
-        GridView(grid: GridModel.layouts[0])
+        GridView(grid: GridModel.layouts[0]) {
+            ImageView()
+        }
             .background(Color("DeepBlue"))
     }
 }
