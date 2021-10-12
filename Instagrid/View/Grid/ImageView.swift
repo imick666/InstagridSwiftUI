@@ -21,9 +21,7 @@ struct ImageView: View {
     
     var body: some View {
         GeometryReader { geo in
-            Button {
-                self.showSelectSource = true
-            } label: {
+            Group {
                 switch image {
                 case .none:
                     Image(systemName: "plus")
@@ -40,6 +38,9 @@ struct ImageView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onTapGesture {
+                self.showSelectSource = true
+            }
 
         }
         .clipped()

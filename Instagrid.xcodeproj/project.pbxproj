@@ -117,7 +117,6 @@
 			children = (
 				E02A9F9426F88C68001CC9B6 /* SupportingFiles */,
 				E0599ABC2701831D001AF6E0 /* Model */,
-				E02A9FA326F89EA2001CC9B6 /* ViewModel */,
 				E02A9F9526F88C94001CC9B6 /* View */,
 				E02A9F6C26F88C62001CC9B6 /* Preview Content */,
 			);
@@ -199,13 +198,6 @@
 				E0599ABD270184B9001AF6E0 /* ImageView.swift */,
 			);
 			path = Grid;
-			sourceTree = "<group>";
-		};
-		E02A9FA326F89EA2001CC9B6 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E0599ABC2701831D001AF6E0 /* Model */ = {

@@ -12,6 +12,12 @@ struct PortraitView: View {
     // MARK: - Properties
     
     @State private var selectedIndex = 0
+    @State private var gridYOffset: CGFloat = .zero
+    @State private var gridScale: CGFloat = 1
+    @State private var isDragging = false
+    
+    // For Tests
+    @State private var showAlert = false
     
     private let layouts: [GridModel] = GridModel.layouts
     
@@ -36,12 +42,49 @@ struct PortraitView: View {
                     .padding(.top)
             }
             .foregroundColor(.white)
+            .scaleEffect(isDragging ? 0.8 : 1)
+            .animation(
+                isDragging ?
+                    .easeInOut(duration: 0.8).repeatForever(autoreverses: true) :
+                    .easeIn(duration: 0.4)
+            )
             
             GridView(grid: layouts[selectedIndex]) {
                 ImageView()
             }
                 .background(Color("DeepBlue"))
                 .padding()
+                .offset(x: 0, y: gridYOffset)
+                .scaleEffect(gridScale)
+                .gesture(
+                    DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                        .onChanged { value in
+                            self.isDragging = true
+                            withAnimation(.easeInOut) {
+                                self.gridScale = 0.8
+                                guard value.location.y < value.startLocation.y else { return }
+                                self.gridYOffset = value.translation.height
+                            }
+                            
+                        }
+                        .onEnded { value in
+                            self.isDragging = false
+                            withAnimation(.easeInOut) {
+
+                                if value.predictedEndLocation.y < value.startLocation.y - 800 {
+                                    self.gridYOffset = -screenSize.height
+                                    self.gridScale = 1
+                                    self.showAlert.toggle()
+                                } else {
+                                    self.gridYOffset = .zero
+                                    self.gridScale = 1
+                                }
+                            }
+                            
+                            print("start location : \(value.startLocation.y)")
+                            print("predicted location : \(value.predictedEndLocation.y)")
+                        }
+                )
             
             Spacer()
             
@@ -51,6 +94,20 @@ struct PortraitView: View {
             
         }
         .background(Color("LightBlue").edgesIgnoringSafeArea(.all))
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Done"),
+                  message: Text("Show sharing view"),
+                  dismissButton: .cancel {
+                
+                
+                self.gridYOffset = .zero
+                self.gridScale = 0
+                
+                withAnimation {
+                    self.gridScale = 1
+                }
+            })
+        }
     }
     
 }
