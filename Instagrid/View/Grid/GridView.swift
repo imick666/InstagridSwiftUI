@@ -69,7 +69,7 @@ struct GridView<Content: View>: View {
 struct GridView_Previews: PreviewProvider {
     static var previews: some View {
         GridView(grid: GridModel.layouts[0]) {
-            ImageView()
+            ImageView(viewModel: .init())
         }
             .background(Color("DeepBlue"))
     }

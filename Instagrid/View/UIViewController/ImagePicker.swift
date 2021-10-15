@@ -11,7 +11,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     typealias UIViewControllerType = UIImagePickerController
     
     @Environment(\.presentationMode) var presentationMode
-    @Binding var pickedImage: UIImage?
+    @Binding var pickedImage: Data?
     var imageSource: UIImagePickerController.SourceType
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
@@ -41,7 +41,7 @@ extension ImagePicker {
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let uiImage = info[.editedImage] as? UIImage {
-                self.parent.pickedImage = uiImage
+                self.parent.pickedImage = uiImage.jpegData(compressionQuality: 1)
             }
             
             parent.presentationMode.wrappedValue.dismiss()

@@ -50,7 +50,7 @@ struct PortraitView: View {
             )
             
             GridView(grid: layouts[selectedIndex]) {
-                ImageView()
+                ImageView(viewModel: .init())
             }
                 .background(Color("DeepBlue"))
                 .padding()

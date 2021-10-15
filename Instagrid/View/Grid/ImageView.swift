@@ -11,87 +11,68 @@ struct ImageView: View {
     
     // MARK: - Properties
     
-    @State private var showImagePicker = false
-    @State private var showSelectSource = false
-    @State private var selectedImage: UIImage?
-    @State private var image: Image?
-    @State private var sourceType: UIImagePickerController.SourceType?
+    @ObservedObject var viewModel: ImageViewModel
     
     // MARK: - Body
     
     var body: some View {
         GeometryReader { geo in
             Group {
-                switch image {
-                case .none:
-                    Image(systemName: "plus")
-                        .resizable()
-                        .foregroundColor(.init("Grey"))
-                        .scaleEffect(0.4)
-                        .aspectRatio(1, contentMode: .fit)
-                case .some(let image):
-                    image
+                if let imageData = viewModel.selectedImage, let uiImage = UIImage(data: imageData) {
+                    Image(uiImage: uiImage)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geo.size.width, height: geo.size.height)
                         .clipped()
+                } else {
+                    Image(systemName: "plus")
+                        .resizable()
+                        .foregroundColor(.init("MidBlue"))
+                        .scaleEffect(0.4)
+                        .aspectRatio(1, contentMode: .fit)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .onTapGesture {
-                self.showSelectSource = true
+                self.viewModel.showSourceSelector = true
             }
 
         }
         .clipped()
         .background(Color(.white))
-        .actionSheet(isPresented: $showSelectSource) {
-            ActionSheet(title: Text("Select source"), buttons: sourcesButtons())
+        .actionSheet(isPresented: $viewModel.showSourceSelector) {
+            ActionSheet(title: Text("Select source"), buttons: getPickerSource())
         }
-        .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
-            ImagePicker(pickedImage: $selectedImage, imageSource: sourceType!)
+        .sheet(isPresented: $viewModel.showPicker, onDismiss: { }) {
+            ImagePicker(pickedImage: $viewModel.selectedImage, imageSource: viewModel.pickerSource!)
         }
     }
     
     // MARK: - Methodes
     
-    func clear() {
-        
-    }
-    
-    private func loadImage() {
-        if let uiImage = selectedImage {
-            image = Image(uiImage: uiImage)
-        }
-    }
-    
-    private func sourcesButtons() -> [ActionSheet.Button] {
+    private func getPickerSource() -> [ActionSheet.Button] {
         var buttons = [ActionSheet.Button]()
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            buttons.append(.default(Text("Camera")) {
-                self.sourceType = .camera
-                self.showImagePicker = true
+            buttons.append(.default(Text("Camera")){
+                self.viewModel.pickerSource = .camera
             })
         }
         
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            buttons.append(.default(Text("Photo library")) {
-                self.sourceType = .photoLibrary
-                self.showImagePicker = true
+            buttons.append(.default(Text("Photo library")){
+                self.viewModel.pickerSource = .photoLibrary
             })
         }
         
-        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
-            buttons.append(.default(Text("Saved album")) {
-                self.sourceType = .savedPhotosAlbum
-                self.showImagePicker = true
-            })
+        if !viewModel.imageIsEmpty {
+            buttons.append(.destructive(Text("Remove Image"), action: { viewModel.clearImage() }))
         }
         
         buttons.append(.cancel())
         
         return buttons
+        
     }
     
 }
@@ -100,7 +81,7 @@ struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             GridView(grid: .layouts[2]) {
-                ImageView()
+                ImageView(viewModel: .init())
             }
             .background(Color("DeepBlue"))
 
