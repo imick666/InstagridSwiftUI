@@ -9,23 +9,26 @@ import SwiftUI
 
 struct SelectorView: View {
     
-    var data: [GridModel]
-    @Binding var selectedIndex: Int
+    // MARK: - Properties
+    
+    @ObservedObject var viewModel: SelectorViewModel
+    
+    // MARK: - Body
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .bottom) {
-                ForEach(0 ..< data.count, id: \.self) { index in
+                ForEach(viewModel.gridModels) { gridModel in
                     
-                    Button(action: { selectedIndex = index },
+                    Button(action: { self.viewModel.selectGrid(gridModel) },
                            label: {
                         
-                        GridView(grid: data[index]) { Color(.white) }
+                        GridView(grid: gridModel) { Color(.white) }
                                 .background(Color("Grey"))
                                 .overlay(
                                     Color("MidBlue")
                                         .opacity(
-                                            (index == selectedIndex) ? 0.4 : 0
+                                            (gridModel == viewModel.selectedGrid) ? 0.4 : 0
                                         )
                                 )
                     })
@@ -37,7 +40,7 @@ struct SelectorView: View {
 
 struct Selector_Previews: PreviewProvider {
     static var previews: some View {
-        SelectorView(data: GridModel.layouts, selectedIndex: .constant(0))
+        SelectorView(viewModel: .init())
             .frame(height: 80)
     }
 }

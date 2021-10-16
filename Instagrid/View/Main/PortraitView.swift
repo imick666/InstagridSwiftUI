@@ -15,11 +15,11 @@ struct PortraitView: View {
     @State private var gridYOffset: CGFloat = .zero
     @State private var gridScale: CGFloat = 1
     @State private var isDragging = false
+    @ObservedObject private var selectorViewModel = SelectorViewModel()
     
     // For Tests
     @State private var showAlert = false
     
-    private let layouts: [GridModel] = GridModel.layouts
     
     private var screenSize: CGRect {
         UIScreen.main.bounds
@@ -49,7 +49,7 @@ struct PortraitView: View {
                     .easeIn(duration: 0.4)
             )
             
-            GridView(grid: layouts[selectedIndex]) {
+            GridView(grid: selectorViewModel.selectedGrid!) {
                 ImageView(viewModel: .init())
             }
                 .background(Color("DeepBlue"))
@@ -88,7 +88,7 @@ struct PortraitView: View {
             
             Spacer()
             
-            SelectorView(data: layouts, selectedIndex: $selectedIndex)
+            SelectorView(viewModel: selectorViewModel)
                 .frame(height: screenSize.height / 10)
                 .padding()
             

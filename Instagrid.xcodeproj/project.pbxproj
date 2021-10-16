@@ -24,6 +24,7 @@
 		E0599ABE270184B9001AF6E0 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0599ABD270184B9001AF6E0 /* ImageView.swift */; };
 		E0599AC127018562001AF6E0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0599AC027018562001AF6E0 /* ImagePicker.swift */; };
 		E05A4BD326FD0C6100B8F4F0 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A4BD226FD0C6100B8F4F0 /* SelectorView.swift */; };
+		E0D4B392271AE9C30016073D /* SelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D4B391271AE9C30016073D /* SelectorViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		E0599ABD270184B9001AF6E0 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		E0599AC027018562001AF6E0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E05A4BD226FD0C6100B8F4F0 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
+		E0D4B391271AE9C30016073D /* SelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				E02954542719B1A000206747 /* ImageViewModel.swift */,
+				E0D4B391271AE9C30016073D /* SelectorViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0599ABE270184B9001AF6E0 /* ImageView.swift in Sources */,
+				E0D4B392271AE9C30016073D /* SelectorViewModel.swift in Sources */,
 				E02A9FA526F89EB3001CC9B6 /* GridModel.swift in Sources */,
 				E02A9F6526F88C61001CC9B6 /* AppDelegate.swift in Sources */,
 				E0599AC127018562001AF6E0 /* ImagePicker.swift in Sources */,

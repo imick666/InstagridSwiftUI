@@ -11,12 +11,22 @@ enum GridOrientation {
     case horizontal, vertical
 }
 
-struct GridModel {
+struct GridModel: Identifiable {
 
+    var id = UUID()
     var top: Int
     var bottom: Int
     var orientation: GridOrientation
     
+}
+
+extension GridModel: Equatable {
+    
+    static func == (lhs: GridModel, rhs: GridModel) -> Bool {
+        return lhs.top == rhs.top &&
+                lhs.bottom == rhs.bottom &&
+                lhs.orientation == rhs.orientation
+    }
 }
 
 extension GridModel {
