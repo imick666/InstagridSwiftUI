@@ -20,6 +20,7 @@ struct PortraitView: View {
     // For Tests
     @State private var showAlert = false
     
+    private let layouts: [GridModel] = GridModel.layouts
     
     private var screenSize: CGRect {
         UIScreen.main.bounds
