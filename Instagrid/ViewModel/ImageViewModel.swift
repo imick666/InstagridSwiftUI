@@ -9,10 +9,11 @@ import Foundation
 import UIKit
 import Combine
 
-final class ImageViewModel: ObservableObject {
+final class ImageViewModel: ObservableObject, Identifiable {
     
     // MARK: - Properties
     
+    var id = UUID()
     @Published var selectedImage: Data? = nil
     @Published var imageIsEmpty = true
     @Published var showSourceSelector = false

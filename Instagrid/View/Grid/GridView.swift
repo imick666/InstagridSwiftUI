@@ -7,70 +7,73 @@
 
 import SwiftUI
 
-struct GridView<Content: View>: View {
+struct GridView: View {
     
     // MARK: - Properties
     
-    var grid: GridModel
-    var content: () -> Content
+    @ObservedObject var viewModel: GridViewModel
+    @State private var frameWidth: CGFloat = .zero
     
     // MARK: - Body
     
     var body: some View {
         GeometryReader { geo in
-            let padding = geo.size.width * 0.04
             
-            switch grid.orientation {
-            case .horizontal: horizontalGrid(padding: padding)
-            case .vertical: verticalGrid(padding: padding)
+            Group {
+                switch viewModel.orientation {
+                case .horizontal: horizontalGrid
+                case .vertical: verticalGrid
+                }
             }
+            .onAppear { self.frameWidth = geo.size.width * 0.04 }
+
         }
+        .padding(frameWidth)
+        .background(viewModel.isForPreview ? Color("Grey") : Color("DeepBlue"))
         .aspectRatio(1, contentMode: .fit)
     }
     
     // MARK: - Methodes
     
-    private func horizontalGrid(padding: CGFloat) -> some View {
-        VStack(spacing: padding) {
-            HStack(spacing: padding) {
-                ForEach(0 ..< grid.top, id: \.self) { _ in
-                    content()
-                }
-            }
-            
-            HStack(spacing: padding) {
-                ForEach(0 ..< grid.bottom, id: \.self) { _ in
-                    content()
+    private var horizontalGrid: some View {
+        VStack(spacing: frameWidth) {
+            ForEach(viewModel.imageViews) { rows in
+                HStack(spacing: frameWidth) {
+                    ForEach(rows) { content in
+                        switch content {
+                        case .preview: Color.white
+                        case .imageViewModel(let viewModel): ImageView(viewModel: viewModel)
+                        }
+                    }
                 }
             }
         }
-        .padding(padding)
     }
     
-    private func verticalGrid(padding: CGFloat) -> some View {
-        HStack(spacing: padding) {
-            VStack(spacing: padding) {
-                ForEach(0 ..< grid.top, id: \.self) { _ in
-                    content()
-                }
-            }
+    private var verticalGrid: some View {
+        HStack(spacing: frameWidth) {
             
-            VStack(spacing: padding) {
-                ForEach(0 ..< grid.bottom, id: \.self) { _ in
-                    content()
+            ForEach(viewModel.imageViews) { collumns in
+                VStack(spacing: frameWidth) {
+                    ForEach(collumns) { content in
+                        switch content {
+                        case .preview: Color.white
+                        case .imageViewModel(let viewModel): ImageView(viewModel: viewModel)
+                        }
+                    }
                 }
             }
         }
-        .padding(padding)
-        
     }
 }
 
 struct GridView_Previews: PreviewProvider {
     static var previews: some View {
-        GridView(grid: GridModel.layouts[0]) {
-            ImageView(viewModel: .init())
+        Group {
+            GridView(viewModel: .init(gridModel: .layouts[2], forPreview: true))
+            
+            GridView(viewModel: .init(gridModel: .layouts[2], forPreview: false))
         }
-            .background(Color("DeepBlue"))
+        
     }
 }

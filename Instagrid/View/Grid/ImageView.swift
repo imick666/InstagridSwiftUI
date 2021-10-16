@@ -80,16 +80,7 @@ struct ImageView: View {
 struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            GridView(grid: .layouts[2]) {
-                ImageView(viewModel: .init())
-            }
-            .background(Color("DeepBlue"))
-
-            GridView(grid: .layouts[0]) {
-                Color(.white)
-            }
-            .background(Color("Grey"))
-
+            GridView(viewModel: .init(gridModel: .layouts[2]))
         }
     }
 }

@@ -49,10 +49,7 @@ struct PortraitView: View {
                     .easeIn(duration: 0.4)
             )
             
-            GridView(grid: selectorViewModel.selectedGrid!) {
-                ImageView(viewModel: .init())
-            }
-                .background(Color("DeepBlue"))
+            GridView(viewModel: .init(gridModel: selectorViewModel.selectedGrid!))
                 .padding()
                 .offset(x: 0, y: gridYOffset)
                 .scaleEffect(gridScale)
