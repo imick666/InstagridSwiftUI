@@ -48,7 +48,7 @@ struct PortraitView: View {
                 .padding()
             
         }
-        .background(Color("LightBlue").edgesIgnoringSafeArea(.all))
+        .background(Color(.lightBlue).edgesIgnoringSafeArea(.all))
     }
     
 }

@@ -25,7 +25,7 @@ struct SelectorView: View {
                         
                         GridView(viewModel: .init(gridModel: gridModel, asPreview: true))
                             .overlay(
-                                Color("MidBlue")
+                                Color(.midBlue)
                                     .opacity(
                                         (gridModel == viewModel.selectedGrid) ? 0.4 : 0
                                     )

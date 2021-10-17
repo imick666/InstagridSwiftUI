@@ -26,6 +26,7 @@
 		E0599AC127018562001AF6E0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0599AC027018562001AF6E0 /* ImagePicker.swift */; };
 		E05A4BD326FD0C6100B8F4F0 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A4BD226FD0C6100B8F4F0 /* SelectorView.swift */; };
 		E08E549A271B23270009BBCE /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E5499271B23270009BBCE /* Array+Identifiable.swift */; };
+		E0C06BDC271C144000946CFA /* Color+Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C06BDB271C144000946CFA /* Color+Asset.swift */; };
 		E0D4B392271AE9C30016073D /* SelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D4B391271AE9C30016073D /* SelectorViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		E0599AC027018562001AF6E0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E05A4BD226FD0C6100B8F4F0 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
 		E08E5499271B23270009BBCE /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
+		E0C06BDB271C144000946CFA /* Color+Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Asset.swift"; sourceTree = "<group>"; };
 		E0D4B391271AE9C30016073D /* SelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				E08E5499271B23270009BBCE /* Array+Identifiable.swift */,
+				E0C06BDB271C144000946CFA /* Color+Asset.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				E0599AC127018562001AF6E0 /* ImagePicker.swift in Sources */,
 				E08E549A271B23270009BBCE /* Array+Identifiable.swift in Sources */,
 				E02A9F9D26F890C9001CC9B6 /* PortraitView.swift in Sources */,
+				E0C06BDC271C144000946CFA /* Color+Asset.swift in Sources */,
 				E02A9F6726F88C61001CC9B6 /* SceneDelegate.swift in Sources */,
 				E02954552719B1A000206747 /* ImageViewModel.swift in Sources */,
 				E02A9FA026F89B28001CC9B6 /* GridView.swift in Sources */,

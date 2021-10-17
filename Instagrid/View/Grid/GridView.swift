@@ -35,7 +35,7 @@ struct GridView: View {
             .onAppear { self.frameWidth = geo.size.width * 0.04 }
         }
         .padding(frameWidth)
-        .background(viewModel.asPreview ? Color("Grey") : Color("DeepBlue"))
+        .background(viewModel.asPreview ? Color(.customGrey) : Color(.deepBlue))
         .aspectRatio(1, contentMode: .fit)
         .scaleEffect(gridScale)
         .offset(y: gridYOffset)

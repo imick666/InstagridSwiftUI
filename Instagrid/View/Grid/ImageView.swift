@@ -27,7 +27,7 @@ struct ImageView: View {
                 } else {
                     Image(systemName: "plus")
                         .resizable()
-                        .foregroundColor(.init("MidBlue"))
+                        .foregroundColor(.init(.midBlue))
                         .scaleEffect(0.4)
                         .aspectRatio(1, contentMode: .fit)
                 }
