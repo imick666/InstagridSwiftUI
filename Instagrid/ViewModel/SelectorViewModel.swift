@@ -6,19 +6,28 @@
 //
 
 import Foundation
+import Combine
 
 final class SelectorViewModel: ObservableObject {
     
     // MARK: - Properties
     
     @Published private(set) var gridModels = [GridModel]()
-    @Published private(set) var selectedGrid: GridModel? = nil
+    @Published private(set) var selectedGrid: GridModel
+    @Published private(set) var gridViewModel: GridViewModel!
+    
+    private var subscriptions = Set<AnyCancellable>()
     
     // MARK: - Init
     
     init() {
         self.gridModels = GridModel.layouts
-        self.selectedGrid = self.gridModels[0]
+        self.selectedGrid = GridModel.layouts[0]
+        
+        $selectedGrid
+            .map { GridViewModel(gridModel: $0) }
+            .assign(to: \.gridViewModel, on: self)
+            .store(in: &subscriptions)
     }
     
     // MARK: - Methodes

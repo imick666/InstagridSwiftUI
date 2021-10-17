@@ -23,7 +23,7 @@ struct SelectorView: View {
                     Button(action: { self.viewModel.selectGrid(gridModel) },
                            label: {
                         
-                        GridView(viewModel: .init(gridModel: gridModel, forPreview: true))
+                        GridView(viewModel: .init(gridModel: gridModel, asPreview: true))
                             .overlay(
                                 Color("MidBlue")
                                     .opacity(

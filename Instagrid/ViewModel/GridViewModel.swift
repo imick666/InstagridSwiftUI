@@ -22,22 +22,20 @@ final class GridViewModel: ObservableObject {
     // MARK: - Properties
     
     @Published private(set) var imageViews = [[GridContent]]()
+    
     private(set) var orientation: GridOrientation = .horizontal
-    private(set) var isForPreview: Bool = false
+    private(set) var asPreview: Bool
+    
+    private var grid: [Int]
     
     // MARK: - Init
     
-    init(gridModel: GridModel, forPreview: Bool = false) {
-        self.isForPreview = forPreview
+    init(gridModel: GridModel, asPreview: Bool = false) {
         self.orientation = gridModel.orientation
+        self.grid = [gridModel.top, gridModel.bottom]
+        self.asPreview = asPreview
         
-        self.imageViews = forPreview ?
-        [
-            Array(repeating: .preview, count: gridModel.top),
-            Array(repeating: .preview, count: gridModel.bottom)
-        ] :
-        createImageViewModels(groups: [gridModel.top, gridModel.bottom])
-        
+        self.imageViews = asPreview ? setAsPreview() : setAsImageGrid()
     }
     
     // MARK: - Methodes
@@ -46,10 +44,17 @@ final class GridViewModel: ObservableObject {
         
     }
     
-    private func createImageViewModels(groups: [Int]) -> [[GridContent]] {
+    private func setAsPreview() -> [[GridContent]] {
+        [
+            Array(repeating: .preview, count: grid[0]),
+            Array(repeating: .preview, count: grid[1])
+        ]
+    }
+    
+    private func setAsImageGrid() -> [[GridContent]] {
         var result = [[GridContent]]()
         
-        groups.forEach { group in
+        grid.forEach { group in
             var subGroup = [GridContent]()
             
             for _ in 0 ..< group { subGroup.append(.imageViewModel(.init())) }
@@ -58,10 +63,11 @@ final class GridViewModel: ObservableObject {
         }
         
         return result
-    
     }
-    
-    
-    
-    
+}
+
+extension GridViewModel: Equatable {
+    static func == (lhs: GridViewModel, rhs: GridViewModel) -> Bool {
+        return lhs.grid == rhs.grid && lhs.orientation == rhs.orientation
+    }
 }
