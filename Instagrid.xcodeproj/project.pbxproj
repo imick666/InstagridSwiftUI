@@ -10,7 +10,7 @@
 		E02954552719B1A000206747 /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02954542719B1A000206747 /* ImageViewModel.swift */; };
 		E02A9F6526F88C61001CC9B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F6426F88C61001CC9B6 /* AppDelegate.swift */; };
 		E02A9F6726F88C61001CC9B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F6626F88C61001CC9B6 /* SceneDelegate.swift */; };
-		E02A9F6926F88C61001CC9B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F6826F88C61001CC9B6 /* ContentView.swift */; };
+		E02A9F6926F88C61001CC9B6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F6826F88C61001CC9B6 /* HomeView.swift */; };
 		E02A9F6B26F88C62001CC9B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02A9F6A26F88C62001CC9B6 /* Assets.xcassets */; };
 		E02A9F6E26F88C62001CC9B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02A9F6D26F88C62001CC9B6 /* Preview Assets.xcassets */; };
 		E02A9F7126F88C62001CC9B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02A9F6F26F88C62001CC9B6 /* LaunchScreen.storyboard */; };
@@ -18,7 +18,6 @@
 		E02A9F8726F88C62001CC9B6 /* InstagridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F8626F88C62001CC9B6 /* InstagridUITests.swift */; };
 		E02A9F9926F88E8E001CC9B6 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = E02A9F9726F88E8E001CC9B6 /* Delm-Medium.otf */; };
 		E02A9F9A26F88E8E001CC9B6 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E02A9F9826F88E8E001CC9B6 /* ThirstySoftRegular.otf */; };
-		E02A9F9D26F890C9001CC9B6 /* PortraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F9C26F890C9001CC9B6 /* PortraitView.swift */; };
 		E02A9FA026F89B28001CC9B6 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9F9F26F89B28001CC9B6 /* GridView.swift */; };
 		E02A9FA526F89EB3001CC9B6 /* GridModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A9FA426F89EB3001CC9B6 /* GridModel.swift */; };
 		E04B05B5271AF35900A0C86E /* GridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B05B4271AF35900A0C86E /* GridViewModel.swift */; };
@@ -52,7 +51,7 @@
 		E02A9F6126F88C61001CC9B6 /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E02A9F6426F88C61001CC9B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E02A9F6626F88C61001CC9B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E02A9F6826F88C61001CC9B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E02A9F6826F88C61001CC9B6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E02A9F6A26F88C62001CC9B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E02A9F6D26F88C62001CC9B6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E02A9F7026F88C62001CC9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,7 +64,6 @@
 		E02A9F8826F88C62001CC9B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E02A9F9726F88E8E001CC9B6 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		E02A9F9826F88E8E001CC9B6 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
-		E02A9F9C26F890C9001CC9B6 /* PortraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitView.swift; sourceTree = "<group>"; };
 		E02A9F9F26F89B28001CC9B6 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		E02A9FA426F89EB3001CC9B6 /* GridModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridModel.swift; sourceTree = "<group>"; };
 		E04B05B4271AF35900A0C86E /* GridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewModel.swift; sourceTree = "<group>"; };
@@ -187,8 +185,7 @@
 		E02A9F9526F88C94001CC9B6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E02A9F6826F88C61001CC9B6 /* ContentView.swift */,
-				E02A9F9B26F890B9001CC9B6 /* Main */,
+				E02A9F6826F88C61001CC9B6 /* HomeView.swift */,
 				E02A9F9E26F89B02001CC9B6 /* Grid */,
 				E0599ABF27018544001AF6E0 /* UIViewController */,
 			);
@@ -202,14 +199,6 @@
 				E02A9F9826F88E8E001CC9B6 /* ThirstySoftRegular.otf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		E02A9F9B26F890B9001CC9B6 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				E02A9F9C26F890C9001CC9B6 /* PortraitView.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		E02A9F9E26F89B02001CC9B6 /* Grid */ = {
@@ -386,12 +375,11 @@
 				E02A9F6526F88C61001CC9B6 /* AppDelegate.swift in Sources */,
 				E0599AC127018562001AF6E0 /* ImagePicker.swift in Sources */,
 				E08E549A271B23270009BBCE /* Array+Identifiable.swift in Sources */,
-				E02A9F9D26F890C9001CC9B6 /* PortraitView.swift in Sources */,
 				E0C06BDC271C144000946CFA /* Color+Asset.swift in Sources */,
 				E02A9F6726F88C61001CC9B6 /* SceneDelegate.swift in Sources */,
 				E02954552719B1A000206747 /* ImageViewModel.swift in Sources */,
 				E02A9FA026F89B28001CC9B6 /* GridView.swift in Sources */,
-				E02A9F6926F88C61001CC9B6 /* ContentView.swift in Sources */,
+				E02A9F6926F88C61001CC9B6 /* HomeView.swift in Sources */,
 				E05A4BD326FD0C6100B8F4F0 /* SelectorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
