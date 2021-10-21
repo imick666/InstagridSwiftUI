@@ -11,15 +11,15 @@ struct GridView: View {
     
     // MARK: - Properties
     
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
     @ObservedObject var viewModel: GridViewModel
     @State private var frameWidth: CGFloat = .zero
     
-    @State private var isDragging = false
-    @State private var gridScale: CGFloat = 1
-    @State private var gridYOffset: CGFloat = .zero
-    
     private var screenSize: CGSize {
         UIScreen.main.bounds.size
+    }
+    private var isPortrait: Bool {
+        verticalSizeClass == .regular
     }
     
     // MARK: - Body
@@ -37,9 +37,6 @@ struct GridView: View {
         .padding(frameWidth)
         .background(viewModel.asPreview ? Color(.customGrey) : Color(.deepBlue))
         .aspectRatio(1, contentMode: .fit)
-        .scaleEffect(gridScale)
-        .offset(y: gridYOffset)
-        .gesture(viewModel.asPreview ? nil : swipeGesture)
     }
     
     // MARK: - View
@@ -76,31 +73,11 @@ struct GridView: View {
     
     // MARK: - Gesture
     
-    private var swipeGesture: some Gesture {
-        DragGesture(minimumDistance: 0, coordinateSpace: .global)
-                                .onChanged { value in
-                                    self.isDragging = true
-                                    withAnimation(.easeInOut) {
-                                        self.gridScale = 0.8
-                                        guard value.location.y < value.startLocation.y else { return }
-                                        self.gridYOffset = value.translation.height
-                                    }
-                                    
-                                }
-                                .onEnded { value in
-                                    self.isDragging = false
-                                    withAnimation(.easeInOut) {
 
-                                        if value.predictedEndLocation.y < value.startLocation.y - 800 {
-                                            self.gridYOffset = -screenSize.height
-                                            self.gridScale = 1
-                                        } else {
-                                            self.gridYOffset = .zero
-                                            self.gridScale = 1
-                                        }
-                                    }
-                                }
-    }
+    
+    // MARK: - Methodes
+    
+    
 }
 
 extension GridView: Equatable {

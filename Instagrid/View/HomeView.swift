@@ -9,12 +9,23 @@ import SwiftUI
 
 struct HomeView: View {
     
+    // MARK: - Properties
+    
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @ObservedObject private var selectorViewModel = SelectorViewModel()
     
+    @State private var isDragging = false
+    @State private var gridScale: CGFloat = 1
+    @State private var gridOffset: CGSize = .zero
+    
+    private var screenSize: CGRect {
+        UIScreen.main.bounds
+    }
     private var isPortrait: Bool {
         verticalSizeClass == .regular
     }
+    
+    // MARK: - Body
     
     var body: some View {
         
@@ -23,6 +34,8 @@ struct HomeView: View {
         case false: landscape
         }
     }
+    
+    // MARK: - View
     
     private var portrait: some View {
         ZStack {
@@ -76,12 +89,54 @@ struct HomeView: View {
         .foregroundColor(.white)
     }
     
-    private var grid: GridView {
+    private var grid: some View {
         GridView(viewModel: selectorViewModel.gridViewModel)
+            .equatable()
+            .scaleEffect(gridScale)
+            .offset(gridOffset)
+            .gesture(selectorViewModel.gridViewModel.asPreview ? nil : swipeGesture)
     }
     
-    private var selector: SelectorView {
+    private var selector: some View {
         SelectorView(viewModel: selectorViewModel)
+    }
+    
+    // MARK: - Gesture
+    
+    private var swipeGesture: some Gesture {
+        DragGesture(minimumDistance: 0, coordinateSpace: .local)
+            .onChanged { value in
+                self.isDragging = true
+                
+                withAnimation(.easeInOut) {
+                    self.gridScale = 0.8
+                    
+                    switch isPortrait {
+                    case true: gridOffset = .init(width: .zero,
+                                                  height: value.startLocation.y > value.location.y ?
+                                                  value.translation.height : .zero)
+                    case false: gridOffset = .init(width: value.startLocation.x > value.location.x ?
+                                                   value.translation.width : .zero,
+                                                   height: .zero)
+                    }
+                }
+            }
+            .onEnded { value in
+                self.isDragging = false
+                withAnimation(.easeInOut) {
+                    
+                    if value.predictedEndLocation.y < value.startLocation.y - 800 {
+                        self.gridOffset.height = -screenSize.height
+                        self.gridScale = 1
+                    } else if value.predictedEndLocation.x < value.startLocation.x - 800 {
+                        self.gridOffset.width = -screenSize.width
+                        self.gridScale = 1
+                    } else {
+                        self.gridOffset = .zero
+                        self.gridScale = 1
+                    }
+                }
+            }
     }
 }
 
