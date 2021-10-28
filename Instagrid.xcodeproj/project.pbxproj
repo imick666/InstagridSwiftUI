@@ -27,6 +27,7 @@
 		E08E549A271B23270009BBCE /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E5499271B23270009BBCE /* Array+Identifiable.swift */; };
 		E0C06BDC271C144000946CFA /* Color+Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C06BDB271C144000946CFA /* Color+Asset.swift */; };
 		E0D4B392271AE9C30016073D /* SelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D4B391271AE9C30016073D /* SelectorViewModel.swift */; };
+		E0E986FE272A82A4009C469B /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = E0E986FD272A82A4009C469B /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		E08E5499271B23270009BBCE /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 		E0C06BDB271C144000946CFA /* Color+Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Asset.swift"; sourceTree = "<group>"; };
 		E0D4B391271AE9C30016073D /* SelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewModel.swift; sourceTree = "<group>"; };
+		E0E986FD272A82A4009C469B /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		E02A9F5826F88C61001CC9B6 = {
 			isa = PBXGroup;
 			children = (
+				E0E986FD272A82A4009C469B /* readme.md */,
 				E02A9F6326F88C61001CC9B6 /* Instagrid */,
 				E02A9F7A26F88C62001CC9B6 /* InstagridTests */,
 				E02A9F8526F88C62001CC9B6 /* InstagridUITests */,
@@ -343,6 +346,7 @@
 				E02A9F6E26F88C62001CC9B6 /* Preview Assets.xcassets in Resources */,
 				E02A9F9A26F88E8E001CC9B6 /* ThirstySoftRegular.otf in Resources */,
 				E02A9F9926F88E8E001CC9B6 /* Delm-Medium.otf in Resources */,
+				E0E986FE272A82A4009C469B /* readme.md in Resources */,
 				E02A9F6B26F88C62001CC9B6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
