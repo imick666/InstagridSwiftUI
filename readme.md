@@ -9,11 +9,14 @@
 ***
 Instagrid SwftUI is a remake of my formation's project "Instagrid" based on the framework SwiftUI
 
+This application allows users to put images in a predefined grid and share the result.
+
 ## Screenshot
 ***
 *Will be evailable soon*
 
-##Technos
+## Technos
+***
 * Swift
 * SwiftUI
 * Combine
